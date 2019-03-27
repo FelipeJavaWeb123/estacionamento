@@ -18,7 +18,7 @@ public class Patio   implements Serializable { /* Categoria correspondente a tab
 	public Patio() {}
 	
 	public Patio(Integer id, String descricao, Integer numerovagas, double vagasporhora) {
-		super();
+		//super();
 		Id = id;
 		this.descricao = descricao;
 		this.numerovagas = numerovagas;
