@@ -1,5 +1,7 @@
 package com.example.algamoney;
 
+import java.sql.Date;
+import java.sql.Time;
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,9 +10,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.example.algamoney.domain.Clientes;
+import com.example.algamoney.domain.Estacionamento;
 import com.example.algamoney.domain.Patio;
 import com.example.algamoney.domain.Veiculos;
 import com.example.algamoney.repository.ClienteRepository;
+import com.example.algamoney.repository.EstacionamentoRepository;
 import com.example.algamoney.repository.PatioRepository;
 import com.example.algamoney.repository.VeiculosRepository;
 
@@ -25,6 +29,9 @@ public class EstacionamentoApplication implements CommandLineRunner{
 
 	@Autowired
 	private PatioRepository patioRepository; 
+
+	@Autowired
+	private EstacionamentoRepository estacionamentoRepository; 
 
 	public static void main(String[] args) {
 		SpringApplication.run(EstacionamentoApplication.class, args);
@@ -42,5 +49,9 @@ public class EstacionamentoApplication implements CommandLineRunner{
 
 		Patio patio = new Patio(1,"descricao",10, 2.50); 
 		patioRepository.saveAll(Arrays.asList(patio));
+
+		Estacionamento estacionamento = new Estacionamento(1,Date.valueOf("2019-28-03"),Date.valueOf("2019-28-03"),Time.valueOf("15:30"),(Double) 8.50,1);
+
+		estacionamentoRepository.saveAll(Arrays.asList(estacionamento));	
 	}
 }
